@@ -1,0 +1,13 @@
+---
+import { getSession } from "../server/session";
+
+const session = await getSession(Astro);
+
+if (!session) {
+  return Astro.redirect("/login");
+}
+---
+
+<h1>Dashboard</h1>
+<p>Welcome {session.user.email}</p>
+<a href="/api/auth/logout">Logout</a>

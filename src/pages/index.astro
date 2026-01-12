@@ -1,8 +1,15 @@
 ---
-
+import { getSession } from "../server/session";
+const session = await getSession(Astro);
 ---
 
-<html lang="en">
+<h1>Home</h1>
+
+<p>This content is public.</p>
+
+{session && <p>You are logged in.</p>}
+
+<!-- <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,4 +20,4 @@
 	<body>
 		<h1>Astro</h1>
 	</body>
-</html>
+</html> -->
